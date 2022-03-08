@@ -1,0 +1,36 @@
+﻿@model MyAdres
+<div class="row">
+    <div class="col-6 offset-3">
+        <h1> Adress Güncelle </h1>
+
+
+        <form asp-controller="MyAdress" asp-action="Indexegel" method="post">
+
+
+            <div class="mb-2">
+                <label for="email" class="form-label"> email gir </label>
+                <input type="email" class="form-control" id="email" placeholder="example@gmail.com" asp-for="Mail" />
+            </div>
+
+            <div class="mb-2">
+                <label for="text" class="form-label"> Şehir seç </label>
+            </div>
+            <select id="text" class="form-select mb-3" asp-items="ViewBag.Cities" asp-for="CityId">
+
+                <option selected disabled> şehir seçin </option>
+            </select>
+
+            <div class="mb-2">
+                <label for="text" class="form-label"> İlçe  seç </label>
+            </div>
+            <select id="text" class="form-select mb-3" asp-items="ViewBag.Towns" asp-for="TownId">
+                <option selected disabled>  ilçe seçin </option>
+            </select>
+
+            <input type="submit" class=" btn btn-primary" value="güncelle" />
+
+
+        </form>
+
+    </div>
+</div>

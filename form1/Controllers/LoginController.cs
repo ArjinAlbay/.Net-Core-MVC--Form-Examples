@@ -22,6 +22,7 @@ namespace form1.Controllers
                 return RedirectToAction("Index", "Home");
             }
             ViewData["Message"] = "hatalı giriş";
+            //VİEWDATA KULLANIRSAK VİEW DÖNDÜRMEMİZ GEREKİYOR.
 
             return View("Login");
 
@@ -41,12 +42,13 @@ namespace form1.Controllers
                 register.Password == "145" 
                 )
             {
-                //TempData["Message1"] = "kayıt başarılı.";
+                
                 return RedirectToAction("Index", "Home");
             }
 
-            ViewData["Message1"] = "eksik veya hatalı giriş";
-            return View("Register");
+            TempData["Message1"] = "eksik veya hatalı giriş";
+            //TEMPDATA KULLANIRSAK DİĞER YÖNLENDİRMELERİ YAPABİLİRİZ
+            return RedirectToAction("Register", "Login");
         }
 
     }

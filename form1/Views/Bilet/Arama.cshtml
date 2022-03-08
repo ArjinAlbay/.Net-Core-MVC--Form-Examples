@@ -1,0 +1,47 @@
+﻿@model AramaViewModel
+<div class="row">
+    <div class="col-6 offset-3">
+        <h1> Adress Güncelle </h1>
+
+
+        <form asp-controller="Bilet" asp-action="Aramayagel" method="post">
+
+
+            <div class="mb-2">
+                <label for="kalkis" class="form-label"> kalkış yeri </label>
+            </div>
+            <select id="kalkis" class="form-select mb-3" asp-items="ViewBag.Kalkis" asp-for="KalkisNoktasiId">
+
+                <option selected disabled> şehir seçin </option>
+            </select>
+
+            <div class="mb-2">
+                <label for="varis" class="form-label"> varış yeri </label>
+            </div>
+            <select id="varis" class="form-select mb-3" asp-items="ViewBag.Varis" asp-for="VarisNoktasiId">
+                <option selected disabled> şehir seçin </option>
+            </select>
+
+            <div class="mb-2">
+                <label for="date" class="form-label">
+                    Tarih seçin
+
+                </label>
+                <input type="date" class="form-control" asp-for="YolculukTarihi">
+
+            </div>
+
+            <input type="submit" class=" btn btn-primary mt-2" value="arama yap" />
+
+
+        </form>
+
+        @if (ViewData["Message"] != null)
+        {
+            <div class="alert alert-primary" role="alert">
+                @ViewData["Message"]
+            </div>
+        }
+
+    </div>
+</div>
