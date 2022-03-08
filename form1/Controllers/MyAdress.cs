@@ -28,7 +28,10 @@ namespace form1.Controllers
        [HttpPost]
        public IActionResult Indexegel(MyAdres myadres)
         {
-
+            //if (!myadres.Isagreed)
+            //{
+            //    ViewBag.message = "güncellemeyi kabul etmediniz.";
+            //}
      
             return View("Index");
         }

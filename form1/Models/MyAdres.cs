@@ -7,5 +7,7 @@
 
         public int TownId { get; set; }
         public int CityId { get; set; }
+        public bool Isagreed { get; set; }
+        
     }
 }
